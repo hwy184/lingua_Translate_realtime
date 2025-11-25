@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "src",
+    "outDir": "dist",
+
+    // Environment Settings
+    "module": "node16", // Hoặc "CommonJS" nếu bạn dùng Node.js < 16 hoặc không dùng ES Modules
+    "target": "ES2022", // Phù hợp với Node.js 16+, có thể điều chỉnh tùy phiên bản Node.js
+    "lib": ["ES2022"], // Phù hợp với target
+    "types": ["node"], // Đảm bảo cài đặt @types/node
+
+    // Other Outputs
+    "sourceMap": true, // Hỗ trợ debug
+    "declaration": false, // Tắt nếu không cần xuất .d.ts files
+    "declarationMap": false, // Tắt nếu không cần declaration
+
+    // Stricter Typechecking Options
+    "strict": true, // Bật tất cả kiểm tra nghiêm ngặt
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options (khuyến nghị bật)
+    "noImplicitReturns": true, // Đảm bảo tất cả hàm có return rõ ràng
+    "noUnusedLocals": true, // Báo lỗi nếu có biến không dùng
+    "noUnusedParameters": false, // Báo lỗi nếu có tham số không dùng
+    "noFallthroughCasesInSwitch": true, // Ngăn lỗi trong switch-case
+
+    // Recommended Options
+    "esModuleInterop": true, // Hỗ trợ CommonJS/ES Module
+    "resolveJsonModule": true, // Cho phép import JSON
+    "allowJs": true, // Hỗ trợ JavaScript (nếu cần)
+    "moduleResolution": "node16", // Phù hợp với Node.js 16+
+    "skipLibCheck": true, // Tăng tốc biên dịch
+    "verbatimModuleSyntax": true, // Đảm bảo cú pháp module rõ ràng
+    "isolatedModules": true, // Hỗ trợ công cụ như esbuild/swc
+    "moduleDetection": "force" // Ép nhận diện module
+  },
+  "include": ["src/**/*"], // Chỉ biên dịch file trong src
+  "exclude": ["node_modules", "dist"] // Loại trừ thư mục không cần
+}
