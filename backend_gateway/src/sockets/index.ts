@@ -4,6 +4,7 @@ import registerTranslationHandler from "./handler/translationHandler.js";
 import registerOcrHandler from "./handler/ocrHandler.js";
 import registerFileHandler from "./handler/fileHandler.js";
 import registerAudioHandler from "./handler/audioHandler.js";
+import registerS2SRoomHandler from "./handler/s2sRoomHandler.js";
 import type {
     rawAudio,
     rawFile,
@@ -55,7 +56,11 @@ const registerSocketHandlers = (io: Server) => {
         socket.on("disconnect", () => {
             console.log(`❌ Client đã ngắt kết nối: ${socket.id}`);
         });
+
+        // Đăng ký S2S Handler
+        registerS2SRoomHandler(socket);
     });
 };
+
 
 export default registerSocketHandlers;

@@ -19,4 +19,9 @@ export const env = {
     // Server
     PORT: parseInt(process.env["PORT"] ?? "3000", 10),
     PYTHON_API_URL: process.env["PYTHON_API_URL"] ?? "http://127.0.0.1:8000",
+
+    // LiveKit
+    LIVEKIT_URL: process.env["LIVEKIT_URL"] ?? "ws://localhost:7880",
+    LIVEKIT_API_KEY: process.env["LIVEKIT_API_KEY"] ?? "devkey",
+    LIVEKIT_API_SECRET: process.env["LIVEKIT_API_SECRET"] ?? "supersecretkey_1234567890_abcdefgh",
 } as const;

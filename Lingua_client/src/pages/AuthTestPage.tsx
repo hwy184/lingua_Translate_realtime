@@ -47,6 +47,10 @@ export default function AuthTestPage() {
             setAccessToken(data.accessToken);
             setRefreshTokenValue(data.refreshToken);
             setUser(data.user);
+            
+            // Lưu thông tin người dùng vào localStorage cho các thành phần khác (S2S)
+            localStorage.setItem("lingua_user", JSON.stringify(data.user));
+            
             setMessage("✅ Đăng nhập Google thành công!");
         } catch {
             setMessage("❌ Đăng nhập Google thất bại.");
@@ -94,6 +98,7 @@ export default function AuthTestPage() {
             setAccessToken(null);
             setRefreshTokenValue(null);
             setUser(null);
+            localStorage.removeItem("lingua_user");
             setMessage("✅ Đã đăng xuất.");
         } catch {
             setMessage("❌ Đăng xuất thất bại.");

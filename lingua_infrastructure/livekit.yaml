@@ -1,0 +1,17 @@
+# Cổng API chính (HTTP/WebSocket)
+port: 7880
+bind_addresses:
+  - ""
+rtc:
+  # Cổng cho tín hiệu điều khiển (TCP)
+  tcp_port: 7881
+  # Dải cổng cho dữ liệu âm thanh/video (UDP) - Quan trọng cho Real-time
+  port_range_start: 50000
+  port_range_end: 50100
+  # Vì chạy local trên Windows, ta để false để tránh lỗi NAT
+  use_external_ip: false
+keys:
+  # Format: <API_KEY>: <API_SECRET> (yêu cầu secret >= 32 kí tự)
+  devkey: supersecretkey_1234567890_abcdefgh
+logging:
+  level: info
